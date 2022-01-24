@@ -56,17 +56,17 @@
 1拉源码
 国内
 ```
-git clone https://ghproxy.com/https://github.com/NolanHzy/nvjdcdocker.git /root/nolanjdc
+git clone https://ghproxy.com/https://github.com/Turbo1013/nvjdcdocker.git /root/nolanjdc
 ```
 国外
 ```
-git clone https://github.com/NolanHzy/nvjdcdocker.git /root/nolanjdc
+git clone https://github.com/Turbo1013/nvjdcdocker.git /root/nolanjdc
 ```
 
 
 2 拉取基础镜像以后不需要拉取镜像了 如果需要拉取我会通知
 ```
-sudo docker pull nolanhzy/nvjdc:latest
+docker pull sybxhlz/nvjdc:latest
 ```
 
 3 执行命令
@@ -182,9 +182,13 @@ cd  /root/nolanjdc
 10启动镜像
 
 ```
-sudo docker run   --name nolanjdc -p 5701:80 -d  -v  "$(pwd)":/app \
+sudo docker run -d \
+--name nolanjdc \
+-p 5704:80 -d \
+-v  "$(pwd)":/app \
 -v /etc/localtime:/etc/localtime:ro \
--it --privileged=true  nolanhzy/nvjdc:latest
+-it --privileged=true \
+sybxhlz/nvjdc:latest
 ```
 注意由于我懒 不想更新镜像 /etc/localtime
 
